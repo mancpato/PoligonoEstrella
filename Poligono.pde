@@ -37,7 +37,7 @@ class Poligono {
     } 
     
     boolean Dentro(float X, float Y) {
-        float D = Distancia(x,y,X,Y); 
+        float D = dist(x,y,X,Y); 
         if ( D > r )
             return false;
         float Apotema = r*cos(PI/n);
@@ -46,7 +46,7 @@ class Poligono {
 
         float px = x+r;
         float py = y;
-        float L = Distancia(X,Y,px,py);
+        float L = dist(X,Y,px,py);
         float Alfa = acos( (D*D + r*r - L*L)/(2*D*r) );
         if ( y>Y )
             Alfa = TWO_PI - Alfa;
@@ -77,14 +77,8 @@ class Poligono {
         float ix =  x1 + s*ax;
         float iy =  y1 + s*ay;
         
-        return D < Distancia(x,y,ix,iy) ? true : false;
+        return D < dist(x,y,ix,iy) ? true : false;
     }
-}
-
-/* Distancia Euclideana */
-float Distancia(float x1, float y1, float x2, float y2)
-{
-  return sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) ) ;
 }
 
 /* Fin de archivo */

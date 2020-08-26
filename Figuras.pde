@@ -29,16 +29,12 @@ void draw()
   fill(100,200,100);
   P.Dibujar();
   
-  if ( P.Dentro(mouseX,mouseY) ) {
+  if ( P.Dentro(mouseX,mouseY) ) 
         fill(0,0,255);
-        //circle(mouseX,mouseY,10);
-  } else if ( E.Dentro(mouseX,mouseY) ) {
+  else if ( E.Dentro(mouseX,mouseY) )
         fill(0,255,0);
-        circle(mouseX,mouseY,10);
-  } else {
+  else
         fill(255,0,0);
-        //circle(mouseX,mouseY,10);
-  }
   circle(mouseX,mouseY,10);
   
   px++; py++;

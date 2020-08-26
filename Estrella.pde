@@ -45,7 +45,7 @@ class Estrella {
     }
     
     boolean Dentro(float X, float Y) {
-        float D = Distancia(x,y,X,Y); 
+        float D = dist(x,y,X,Y); 
         if ( D > rext )
             return false;
         if ( D < rint )
@@ -53,7 +53,7 @@ class Estrella {
 
         float px = x+rext;
         float py = y;
-        float L = Distancia(X,Y,px,py);
+        float L = dist(X,Y,px,py);
         float Alfa = acos( (D*D + rext*rext - L*L)/(2*D*rext) );
         if ( y>Y )
             Alfa = TWO_PI - Alfa;
@@ -93,7 +93,7 @@ class Estrella {
         float ix =  x1 + s*ax;
         float iy =  y1 + s*ay;
         
-        return D < Distancia(x,y,ix,iy) ? true : false;
+        return D < dist(x,y,ix,iy) ? true : false;
     }
 }
 
